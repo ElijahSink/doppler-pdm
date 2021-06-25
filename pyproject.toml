@@ -1,6 +1,6 @@
 [project]
 name = "doppler-pdm"
-version = "1.0.0"
+version = "1.0.1"
 description = "A PDM plugin which allows commands to be run with environment variables from Doppler"
 authors = [{ name="Elijah Sink", email="theminorprofit@gmail.com" }]
 dependencies = ["pdm~=1.6"]
@@ -25,7 +25,7 @@ run = "doppler_pdm.__init__:main"
 [tool.pdm.dev-dependencies]
 dev = ["black~=21.6b0", "isort~=5.9", "pre-commit~=2.13"]
 
-[tool.pdm.scripts]
-_.doppler = true
-test = { cmd="echo test" }
-test2 = { cmd="echo $CFRL_DOMAIN", doppler=false }
+
+[tool.isort]
+length_sort = "1"
+profile = "black"

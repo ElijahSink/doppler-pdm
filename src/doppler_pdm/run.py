@@ -1,9 +1,8 @@
 # STL
-import os
 import json
 import argparse
 import subprocess
-from typing import Dict, Mapping, Optional, Sequence, Union
+from typing import Dict, Union, Mapping, Optional, Sequence
 from json.decoder import JSONDecodeError
 
 # PDM
@@ -92,7 +91,7 @@ class Command(RunCommand):
             if "doppler" in script_options:
                 should_load_from_doppler = bool(script_options.get("doppler", None))
 
-        if options.doppler:
+        if options.doppler is not None:
             should_load_from_doppler = bool(options.doppler)
 
         if should_load_from_doppler:
