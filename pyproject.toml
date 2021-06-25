@@ -1,7 +1,7 @@
 [project]
 name = "doppler-pdm"
-version = "0.1.0"
-description = ""
+version = "1.0.0"
+description = "A PDM plugin which allows commands to be run with environment variables from Doppler"
 authors = [{ name="Elijah Sink", email="theminorprofit@gmail.com" }]
 dependencies = ["pdm~=1.6"]
 requires-python = ">=3.9"
@@ -9,7 +9,7 @@ dynamic = ["classifiers"]
 license = { text="MIT" }
 
 [project.urls]
-homepage = ""
+homepage = "https://github.com/ElijahSink/doppler-pdm"
 
 
 [project.optional-dependencies]
@@ -17,7 +17,15 @@ homepage = ""
 requires = ["pdm-pep517"]
 build-backend = "pdm.pep517.api"
 
+[project.entry-points.pdm]
+run = "doppler_pdm.__init__:main"
+
 [tool]
 [tool.pdm]
 [tool.pdm.dev-dependencies]
 dev = ["black~=21.6b0", "isort~=5.9", "pre-commit~=2.13"]
+
+[tool.pdm.scripts]
+_.doppler = true
+test = { cmd="echo test" }
+test2 = { cmd="echo $CFRL_DOMAIN", doppler=false }
