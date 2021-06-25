@@ -85,7 +85,7 @@ class Command(RunCommand):
 
         should_load_from_doppler = bool(global_env_options.get("doppler", None))
 
-        if command_name in project.scripts:
+        if command_name in (project.scripts or {}):
             script = project.scripts[command_name]
             *_, script_options = self._normalize_script(script)
             if "doppler" in script_options:
