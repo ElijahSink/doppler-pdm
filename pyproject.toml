@@ -1,6 +1,6 @@
 [project]
 name = "doppler-pdm"
-version = "1.0.1"
+version = "1.0.2"
 description = "A PDM plugin which allows commands to be run with environment variables from Doppler"
 authors = [{ name="Elijah Sink", email="theminorprofit@gmail.com" }]
 dependencies = ["pdm~=1.6"]
